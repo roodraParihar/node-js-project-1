@@ -1,0 +1,16 @@
+{
+  "name": "js-project-1",
+  "version": "1.0.0",
+  "description": "job-portal",
+  "main": "server.js",
+  "scripts": {
+    "start": "server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
+  }
+}
