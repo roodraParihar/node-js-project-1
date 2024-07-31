@@ -1,17 +1,27 @@
 // imports
-const express = require("express");
+import express from "express";
+import dotenv from "dotenv";
+import colors from "colors"
+
+// dot env config
+dotenv.config();
 
 // rest object
 const app = express();
+
+
 
 // routes
 app.get("/",(req,res)=>{
     res.send("<h1>welcome to the my job portal</h1>");
 })
 
+// port 
+const PORT = process.env.PORT || 8080;
+
 // listen 
-app.listen(8080,() =>{
-    console.log('node server is running')
+app.listen(PORT,() =>{
+    console.log(`node server is running in ${process.env.DEV_MODE} mode on port ${PORT}`.bgYellow.bgWhite)
 })
 
 
