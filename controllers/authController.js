@@ -1,27 +1,24 @@
 import userModel from "../models/userModel.js"
 
-export const resisterController = async (req,res) => {
+export const resisterController = async (req,res,next) => {
     try {
         const {name,email,password} = req.body
         // validate
         if (!name){
-                return res.status(400).send({success:false,message:"please provide name"})
+                next("name is required")
         }
 
         if (!email){
-            return res.status(400).send({success:false,message:"please provide email"})
+            next("email is required")
     }
 
     if (!password){
-        return res.status(400).send({success:false,message:"please provide password"})
+        next("password is required and greater than 6 digits")
 }
 
 const exisitingUser = await userModel.findOne({email})
 if (exisitingUser){
-    return res.status(200).send({
-        success:false,
-        message: "email already resister please login"
-    });
+   next("email already registered please login")
 } 
 
 const user = await userModel.create({name, email,password});
@@ -32,12 +29,7 @@ res.status(201).send({
 });
         
     } catch (error) {
-        console.log(error)
-        res.status(400).send({
-            message:"error in resister controller",
-            success:false,
-            error
-        })
+       next(error);
         
     }
 } 
