@@ -6,6 +6,7 @@ import cors from "cors";
 import morgan from "morgan";
 import connectDB from "./config/db.js";
 import testRoutes from "./routes/testRoutes.js";
+import authRoutes from  "./routes/authRoutes.js"    
 
 // dot env config
 dotenv.config();
@@ -24,6 +25,7 @@ app.use(morgan("dev"));     // shows in the terminal time taken while running th
 
 // routes
 app.use("/api/v1/test",testRoutes);
+app.use("/api/v1/auth",authRoutes);
 
 
 
