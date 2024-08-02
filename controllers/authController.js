@@ -65,7 +65,7 @@ export const loginController = async (req,res,next) =>{
             next('Invalid username or password');
         }
 
-        user.password = undefined;  // for more security of the password
+        user.password = undefined;  // for more security of the password Hide the password 
 
         const token = user.createJWT();
         res.status(200).json({
