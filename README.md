@@ -1,5 +1,9 @@
 # node-js-project-1
 
+**Features**
+ - User Authentication: Secure user login and registration.
+ - Job Management: Create, update, and manage job postings.
+
 **some important installations**
  - npm i dotenv (for securing the node server)
 

@@ -1,5 +1,5 @@
 import swaggerUi from "swagger-ui-express";
-import swaggerDoc from "swagger-jsdoc";
+import swaggerDoc from "swagger-jsdoc";     
 
 
 // packages imports
